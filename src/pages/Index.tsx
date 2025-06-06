@@ -1,13 +1,41 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { MapPin, Car, Clock, Shield, Star, ArrowRight } from "lucide-react";
 import UserInterface from "@/components/UserInterface";
 import ProviderInterface from "@/components/ProviderInterface";
+import LoginPage from "@/components/LoginPage";
 
 const Index = () => {
-  const [currentView, setCurrentView] = useState<'landing' | 'user' | 'provider'>('landing');
+  const [currentView, setCurrentView] = useState<'landing' | 'user' | 'provider' | 'login'>('landing');
+  const [loginContext, setLoginContext] = useState<'provider' | 'user'>('provider');
+
+  const handleProviderAction = () => {
+    setLoginContext('provider');
+    setCurrentView('login');
+  };
+
+  const handleUserAction = () => {
+    setCurrentView('user');
+  };
+
+  const handleLoginSuccess = () => {
+    if (loginContext === 'provider') {
+      setCurrentView('provider');
+    } else {
+      setCurrentView('user');
+    }
+  };
+
+  if (currentView === 'login') {
+    return (
+      <LoginPage
+        onBack={() => setCurrentView('landing')}
+        onLogin={handleLoginSuccess}
+        title={loginContext === 'provider' ? "become a provider" : "find parking"}
+      />
+    );
+  }
 
   if (currentView === 'user') {
     return <UserInterface onBack={() => setCurrentView('landing')} />;
@@ -31,10 +59,10 @@ const Index = () => {
             </h1>
           </div>
           <div className="flex space-x-3">
-            <Button variant="outline" onClick={() => setCurrentView('user')}>
+            <Button variant="outline" onClick={handleUserAction}>
               Find Parking
             </Button>
-            <Button onClick={() => setCurrentView('provider')}>
+            <Button onClick={handleProviderAction}>
               Become Provider
             </Button>
           </div>
@@ -58,7 +86,7 @@ const Index = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-lg px-8 py-6"
-              onClick={() => setCurrentView('user')}
+              onClick={handleUserAction}
             >
               <MapPin className="mr-2 h-5 w-5" />
               Find Parking Now
@@ -68,7 +96,7 @@ const Index = () => {
               variant="outline" 
               size="lg" 
               className="text-lg px-8 py-6 border-2 hover:bg-blue-50"
-              onClick={() => setCurrentView('provider')}
+              onClick={handleProviderAction}
             >
               <Car className="mr-2 h-5 w-5" />
               List Your Space
@@ -153,7 +181,7 @@ const Index = () => {
               size="lg" 
               variant="secondary"
               className="bg-white text-blue-600 hover:bg-blue-50 text-lg px-8 py-6"
-              onClick={() => setCurrentView('user')}
+              onClick={handleUserAction}
             >
               Start Parking Smart
             </Button>
@@ -161,7 +189,7 @@ const Index = () => {
               size="lg" 
               variant="outline"
               className="border-2 border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-6"
-              onClick={() => setCurrentView('provider')}
+              onClick={handleProviderAction}
             >
               Start Earning Today
             </Button>
