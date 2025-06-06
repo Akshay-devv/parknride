@@ -17,39 +17,39 @@ const UserInterface = ({ onBack }: UserInterfaceProps) => {
   const [selectedSpot, setSelectedSpot] = useState<any>(null);
   const [showBooking, setShowBooking] = useState(false);
 
-  // Mock parking spots data
+  // Mock parking spots data with Indian locations and rupee pricing
   const parkingSpots = [
     {
       id: 1,
-      title: "Downtown Office Garage",
-      address: "123 Business Ave, Downtown",
-      price: "$8/hour",
+      title: "Connaught Place Office Complex",
+      address: "Block A, Connaught Place, New Delhi",
+      price: "₹120/hour",
       rating: 4.8,
-      distance: "0.2 miles",
+      distance: "0.3 km",
       availability: "Available now",
-      features: ["Covered", "Security", "EV Charging"],
+      features: ["Covered", "Security", "CCTV"],
       image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop"
     },
     {
       id: 2,
-      title: "Mall Parking Spot",
-      address: "456 Shopping Center Blvd",
-      price: "$5/hour",
+      title: "Select City Walk Mall",
+      address: "Saket District Centre, New Delhi",
+      price: "₹80/hour",
       rating: 4.6,
-      distance: "0.5 miles",
+      distance: "0.8 km",
       availability: "Available in 15 min",
-      features: ["Covered", "24/7 Access"],
+      features: ["Covered", "24/7 Access", "Valet"],
       image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
     },
     {
       id: 3,
-      title: "Residential Driveway",
-      address: "789 Maple Street",
-      price: "$6/hour",
+      title: "Residential Society Parking",
+      address: "DLF Phase 3, Gurgaon",
+      price: "₹100/hour",
       rating: 4.9,
-      distance: "0.3 miles",
+      distance: "0.5 km",
       availability: "Available now",
-      features: ["Private", "Secure"],
+      features: ["Private", "Secure", "Gated"],
       image: "https://images.unsplash.com/photo-1487252665478-49b61b47f302?w=400&h=300&fit=crop"
     }
   ];
@@ -96,7 +96,7 @@ const UserInterface = ({ onBack }: UserInterfaceProps) => {
             <div className="flex gap-4">
               <div className="flex-1">
                 <Input
-                  placeholder="Enter address or landmark..."
+                  placeholder="Enter address or landmark (e.g., India Gate, CP, Gurgaon)..."
                   value={searchLocation}
                   onChange={(e) => setSearchLocation(e.target.value)}
                   className="h-12"

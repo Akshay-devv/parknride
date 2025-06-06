@@ -16,7 +16,8 @@ const Index = () => {
   };
 
   const handleUserAction = () => {
-    setCurrentView('user');
+    setLoginContext('user');
+    setCurrentView('login');
   };
 
   const handleLoginSuccess = () => {
