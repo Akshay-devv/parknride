@@ -69,7 +69,7 @@ const Index = () => {
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <TrendingUp className="h-4 w-4 mr-2" />
-              Start Earning ₹500+/day
+              Start Earning
             </Button>
           </div>
         </div>
@@ -120,25 +120,9 @@ const Index = () => {
               onClick={handleProviderAction}
             >
               <TrendingUp className="mr-3 h-6 w-6" />
-              Start Earning ₹500+/day
+              Start Earning
               <span className="ml-2 px-2 py-1 bg-white/20 rounded-full text-sm">Hot 🔥</span>
             </Button>
-          </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">50,000+</div>
-              <div className="text-gray-600">Happy Users</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-green-600 mb-2">₹2,500</div>
-              <div className="text-gray-600">Avg. Monthly Earnings</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600 mb-2">25+</div>
-              <div className="text-gray-600">Indian Cities</div>
-            </div>
           </div>
         </div>
       </section>
@@ -202,7 +186,7 @@ const Index = () => {
             </CardHeader>
             <CardContent>
               <CardDescription className="text-gray-600 text-base">
-                Turn your unused parking space into a reliable income source. Top earners make ₹500+ daily in prime locations.
+                Turn your unused parking space into a reliable income source. Top earners make extra income daily in prime locations.
               </CardDescription>
             </CardContent>
           </Card>
@@ -213,7 +197,7 @@ const Index = () => {
       <section className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-black/10"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Join 50,000+ Indians?</h3>
+          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Join Thousands of Indians?</h3>
           <p className="text-2xl text-blue-100 mb-12">Start parking smart or earning money today</p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Button 
@@ -231,7 +215,7 @@ const Index = () => {
               onClick={handleProviderAction}
             >
               <TrendingUp className="mr-3 h-6 w-6" />
-              Start Earning ₹500+/day
+              Start Earning
               <span className="ml-3 px-3 py-1 bg-white/20 rounded-full text-sm">Limited Spots</span>
             </Button>
           </div>
