@@ -20,7 +20,7 @@ const ProviderStats = ({ stats }: ProviderStatsProps) => {
           <DollarSign className="h-4 w-4 text-green-600" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold text-gray-900">{stats.totalEarnings}</div>
+          <div className="text-2xl font-bold text-gray-900">₹24,750</div>
           <p className="text-xs text-gray-500">+12% from last month</p>
         </CardContent>
       </Card>

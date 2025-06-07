@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,9 +14,9 @@ interface ProviderInterfaceProps {
 const ProviderInterface = ({ onBack }: ProviderInterfaceProps) => {
   const [showAddSpot, setShowAddSpot] = useState(false);
 
-  // Mock provider data
+  // Mock provider data with Indian rupees
   const providerStats = {
-    totalEarnings: "$1,247",
+    totalEarnings: "₹24,750",
     activeSpots: 3,
     totalBookings: 127,
     rating: 4.8
@@ -24,21 +25,21 @@ const ProviderInterface = ({ onBack }: ProviderInterfaceProps) => {
   const mySpots = [
     {
       id: 1,
-      title: "Downtown Office Garage",
-      address: "123 Business Ave, Downtown",
-      price: "$8/hour",
+      title: "Connaught Place Office Complex",
+      address: "Block A, Connaught Place, New Delhi",
+      price: "₹120/hour",
       status: "Active",
-      bookings: 23,
-      earnings: "$542"
+      bookings: 156,
+      earnings: "₹18,720"
     },
     {
       id: 2,
-      title: "Residential Driveway",
-      address: "789 Maple Street",
-      price: "$6/hour",
+      title: "DLF Cyber City Residential",
+      address: "Phase 2, DLF Cyber City, Gurgaon",
+      price: "₹100/hour",
       status: "Active",
-      bookings: 18,
-      earnings: "$378"
+      bookings: 89,
+      earnings: "₹8,900"
     }
   ];
 

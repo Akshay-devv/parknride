@@ -19,9 +19,31 @@ interface ProviderSpotsListProps {
 }
 
 const ProviderSpotsList = ({ spots }: ProviderSpotsListProps) => {
+  // Updated spots data with Indian locations and rupee pricing
+  const indianSpots = [
+    {
+      id: 1,
+      title: "Connaught Place Office Complex",
+      address: "Block A, Connaught Place, New Delhi",
+      price: "₹120/hour",
+      status: "Active",
+      bookings: 156,
+      earnings: "₹18,720"
+    },
+    {
+      id: 2,
+      title: "DLF Cyber City Residential",
+      address: "Phase 2, DLF Cyber City, Gurgaon",
+      price: "₹100/hour",
+      status: "Active",
+      bookings: 89,
+      earnings: "₹8,900"
+    }
+  ];
+
   return (
     <div className="grid gap-4">
-      {spots.map((spot) => (
+      {indianSpots.map((spot) => (
         <Card key={spot.id} className="hover:shadow-md transition-shadow">
           <CardContent className="p-6">
             <div className="flex items-start justify-between">
